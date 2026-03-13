@@ -742,7 +742,7 @@ a { color: inherit; text-decoration: none; }
 <!-- NAV -->
 <nav class="nav">
   <a href="index.html" class="nav-logo">
-    <img src="https://nblconsult.com/wp-content/uploads/2025/12/NBL-SVG-colour.svg" alt="NBL Consulting">
+    <img src="assets/NBL-SVG-colour.svg" alt="NBL Consulting">
   </a>
   <div class="nav-right">
     <a href="services.html">Services</a>
@@ -840,7 +840,7 @@ a { color: inherit; text-decoration: none; }
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="https://nblconsult.com/wp-content/uploads/2025/12/NBL-SVG-colour.svg" alt="NBL Consulting">
+          <img src="assets/NBL-SVG-colour.svg" alt="NBL Consulting">
         </div>
         <p>Strategy, execution, and growth.<br>Based in Hong Kong.</p>
         <a href="mailto:contact@nblconsult.com">contact@nblconsult.com</a>
@@ -939,8 +939,7 @@ if (toggle && menu) {
     ctx.clearRect(0,0,W(),H());
     t+=0.006;
     drawGlow();
-    bubbles.forEach(b=>{
-      const x=b.px*W()+Math.sin(t*b.fx+b.phx)*b.ax*W();
+    bubbles.forEach(b=>{\n      const x=b.px*W()+Math.sin(t*b.fx+b.phx)*b.ax*W();
       const y=b.py*H()+Math.sin(t*b.fy+b.phy)*b.ay*H();
       drawBubble(x,y,b.r,b.hue);
     });
