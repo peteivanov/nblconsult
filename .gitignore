@@ -1,0 +1,20 @@
+# WordPress backup
+wp_old/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs
+error_log
+*.log
+
+# Bluehost
+.well-known/
+cgi-bin/
