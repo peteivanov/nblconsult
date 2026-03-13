@@ -1,9 +1,13 @@
+# SVG MIME type
+AddType image/svg+xml .svg .svgz
+
 # Force HTTPS
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
@@ -17,11 +21,6 @@ ErrorDocument 404 /404.html
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
-</IfModule>
-
-# Block access to hidden files and directories
-<IfModule mod_rewrite.c>
-    RewriteRule (^|/)\. - [F]
 </IfModule>
 
 # Block access to wp_old backup
