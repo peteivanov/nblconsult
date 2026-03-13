@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBL Consulting — Strategy, Execution & Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+:root {
+  --green: #7BC269;
+  --green-dark: #5da64f;
+  --charcoal: #2e2e2e;
+  --grey: #607080;
+  --light-bg: #dde6f0;
+  --border: rgba(0,0,0,0.08);
+  --nav-h: 68px;
+}
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fff;
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--nav-h); display: flex; align-items: center;
+  justify-content: space-between; padding: 0 52px;
+  background: rgba(221,230,240,0.88);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,0.55); z-index: 100;
+}
+.nav-logo img { height: 34px; width: auto; display: block; }
+.nav-right { display: flex; align-items: center; gap: 36px; }
+.nav-right a { font-size: 0.875rem; font-weight: 500; color: #607080; transition: color 0.2s; }
+.nav-right a:hover, .nav-right a.active { color: var(--charcoal); }
+.nav-cta {
+  color: #fff !important; background: var(--green);
+  padding: 9px 20px; border-radius: 50px; font-weight: 600 !important;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--green-dark) !important; transform: translateY(-1px); }
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--charcoal); border-radius: 1px; transition: 0.3s; }
+.mobile-menu {
+  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+  background: rgba(221,230,240,0.97); backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 32px; flex-direction: column; gap: 16px; z-index: 99;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--charcoal); padding: 8px 0; border-bottom: 1px solid var(--border); }
+.mobile-menu .nav-cta { display: inline-block; text-align: center; margin-top: 8px; border-radius: 50px; }
+
+/* LAYOUT */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 52px; }
+
+/* HERO */
+.hero {
+  position: relative; min-height: 100vh;
+  padding-top: var(--nav-h); display: flex;
+  align-items: center; text-align: center;
+  background: var(--light-bg); overflow: hidden;
+}
+#bubble-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+.hero-inner {
+  position: relative; z-index: 1; width: 100%;
+  padding: 80px 0; display: flex; flex-direction: column; align-items: center;
+}
+.hero-logo { margin-bottom: 36px; }
+.hero-logo img { height: 68px; width: auto; }
+.hero-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #5a6a7a; margin-bottom: 24px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; display: block; width: 22px; height: 1px; background: #8a9aaa; opacity: 0.5;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  font-weight: 800; line-height: 1.06;
+  letter-spacing: -0.025em; color: var(--charcoal); margin-bottom: 8px;
+}
+.hero h1 em { font-style: normal; color: var(--green); }
+.hero-together {
+  display: block; font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+  font-weight: 300; color: #4a5a6a;
+  letter-spacing: 0.04em; margin-bottom: 28px;
+}
+.hero p {
+  font-size: 1rem; color: var(--grey);
+  max-width: 440px; line-height: 1.8; margin-bottom: 40px;
+}
+.hero-links { display: flex; gap: 14px; align-items: center; justify-content: center; }
+.btn-green {
+  font-size: 0.875rem; font-weight: 600; color: #fff;
+  background: var(--green); padding: 13px 28px; border-radius: 50px;
+  transition: background 0.2s, transform 0.15s; display: inline-block;
+}
+.btn-green:hover { background: var(--green-dark); transform: translateY(-1px); }
+.btn-outline {
+  font-size: 0.875rem; font-weight: 600; color: var(--charcoal);
+  background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.12);
+  padding: 13px 28px; border-radius: 50px;
+  transition: background 0.2s, transform 0.15s; display: inline-block;
+  backdrop-filter: blur(8px);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.92); transform: translateY(-1px); }
+
+/* CONTENT */
+.content-area { background: #fff; }
+.section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+.section:last-of-type { border-bottom: none; }
+.section-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--green); margin-bottom: 16px;
+}
+.section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700;
+  letter-spacing: -0.02em; line-height: 1.2; color: var(--charcoal); margin-bottom: 20px;
+}
+.service-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
+.service-item {
+  background: var(--light-bg); border: 1px solid rgba(0,0,0,0.06);
+  padding: 32px 28px; border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s; display: block;
+}
+.service-item:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+.service-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green); margin-bottom: 14px; }
+.service-item h3 { font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 10px; }
+.service-item p { font-size: 0.875rem; color: var(--grey); line-height: 1.7; }
+.why-text { font-size: 0.95rem; color: var(--grey); line-height: 1.85; max-width: 560px; margin-bottom: 14px; }
+.why-link { color: var(--green); font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 8px; transition: opacity 0.2s; }
+.why-link:hover { opacity: 0.75; }
+
+/* CTA */
+.cta-section { position: relative; background: var(--green); padding: 96px 0; text-align: center; overflow: hidden; }
+.cta-inner { position: relative; z-index: 1; }
+.cta-section h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+  color: #fff; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 14px;
+}
+.cta-section p { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 36px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.btn-white {
+  display: inline-block; background: #fff; color: var(--green);
+  font-size: 0.9rem; font-weight: 700; padding: 13px 32px; border-radius: 50px;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.btn-white:hover { opacity: 0.92; transform: translateY(-1px); }
+
+/* FOOTER */
+.footer { background: var(--charcoal); padding: 52px 0 0; }
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 48px; padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap;
+}
+.footer-logo img { height: 30px; width: auto; filter: brightness(0) invert(1); margin-bottom: 12px; }
+.footer-brand p { color: rgba(255,255,255,0.4); font-size: 0.82rem; line-height: 1.7; max-width: 220px; }
+.footer-brand a { color: rgba(255,255,255,0.5); font-size: 0.82rem; display: block; margin-top: 8px; transition: color 0.2s; }
+.footer-brand a:hover { color: #fff; }
+.footer-links { display: flex; gap: 52px; }
+.footer-col { display: flex; flex-direction: column; gap: 10px; }
+.footer-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 4px; }
+.footer-col a { font-size: 0.82rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { padding: 20px 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav { padding: 0 24px; }
+  .nav-right a:not(.nav-cta) { display: none; }
+  .nav-toggle { display: flex; }
+  .wrap { padding: 0 24px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-together { font-size: 1.1rem; }
+  .service-list { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 32px; }
+  .footer-links { flex-direction: column; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="https://nblconsult.com/wp-content/uploads/2025/12/NBL-SVG-colour.svg" alt="NBL Consulting">
+  </a>
+  <div class="nav-right">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+  </div>
+  <button class="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html" class="nav-cta">Get in touch</a>
+</div>
+
+<section class="hero">
+  <canvas id="bubble-canvas"></canvas>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-logo">
+        <img src="https://nblconsult.com/wp-content/uploads/2025/12/NBL-SVG-colour.svg" alt="NBL Consulting">
+      </div>
+      <div class="hero-eyebrow">Hong Kong</div>
+      <h1>Strategy, <em>execution,</em><br>and growth —</h1>
+      <span class="hero-together">together.</span>
+      <p>We work with businesses at every stage — from planning through to delivery. We don't just advise. We stay close to the work until things move.</p>
+      <div class="hero-links">
+        <a href="services.html" class="btn-green">What we do</a>
+        <a href="contact.html" class="btn-outline">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="content-area">
+  <div class="wrap">
+    <section class="section">
+      <div class="section-label">Services</div>
+      <h2>Three ways we help</h2>
+      <div class="service-list">
+        <a href="services.html#strategy" class="service-item">
+          <div class="service-num">01</div>
+          <h3>Strategy & Planning</h3>
+          <p>Clear direction before execution. Objectives, priorities, and plans designed to be implemented — not just presented.</p>
+        </a>
+        <a href="services.html#execution" class="service-item">
+          <div class="service-num">02</div>
+          <h3>Execution Support</h3>
+          <p>Hands-on delivery alongside your team. We stay involved through the hard parts — not just the kickoff.</p>
+        </a>
+        <a href="services.html#growth" class="service-item">
+          <div class="service-num">03</div>
+          <h3>Growth & Go-to-Market</h3>
+          <p>Launches, expansions, new markets. Practical plans covering positioning, channels, partnerships, and timing.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Why NBL</div>
+      <h2>We stay involved<br>until things work.</h2>
+      <p class="why-text">Most consultancy ends when the report is delivered. Ours doesn't. We're embedded in the work, adjusting as things change, and accountable to outcomes. Based in Hong Kong, operating across the region.</p>
+      <a href="about.html" class="why-link">About us →</a>
+    </section>
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="wrap cta-inner">
+    <h2>Ready to get started?</h2>
+    <p>Tell us where you are and what you're trying to solve.</p>
+    <a href="contact.html" class="btn-white">Get in touch</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://nblconsult.com/wp-content/uploads/2025/12/NBL-SVG-colour.svg" alt="NBL Consulting">
+        </div>
+        <p>Strategy, execution, and growth.<br>Based in Hong Kong.</p>
+        <a href="mailto:contact@nblconsult.com">contact@nblconsult.com</a>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="about.html">About</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <a href="services.html#strategy">Strategy & Planning</a>
+          <a href="services.html#execution">Execution Support</a>
+          <a href="services.html#growth">Growth & Go-to-Market</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 NBL Consulting Ltd. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const canvas = document.getElementById('bubble-canvas');
+  const ctx = canvas.getContext('2d');
+  const hero = canvas.parentElement;
+
+  function resize() {
+    canvas.width = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const W = () => canvas.width;
+  const H = () => canvas.height;
+
+  const bubbles = [
+    { px:0.10, py:0.18, r:115, ax:0.055, ay:0.048, fx:0.70, fy:0.82, phx:0.0,  phy:1.1,  hue:210 },
+    { px:0.86, py:0.13, r:90,  ax:0.048, ay:0.065, fx:0.92, fy:0.62, phx:2.0,  phy:0.5,  hue:200 },
+    { px:0.76, py:0.72, r:138, ax:0.040, ay:0.058, fx:0.62, fy:1.02, phx:1.2,  phy:2.3,  hue:205 },
+    { px:0.18, py:0.74, r:68,  ax:0.075, ay:0.042, fx:1.12, fy:0.72, phx:3.1,  phy:0.8,  hue:215 },
+    { px:0.50, py:0.05, r:52,  ax:0.068, ay:0.088, fx:0.82, fy:1.22, phx:1.6,  phy:1.9,  hue:200 },
+    { px:0.93, py:0.50, r:48,  ax:0.058, ay:0.050, fx:1.22, fy:0.92, phx:0.7,  phy:3.2,  hue:208 },
+    { px:0.03, py:0.48, r:82,  ax:0.050, ay:0.072, fx:0.72, fy:0.82, phx:2.4,  phy:0.4,  hue:212 },
+    { px:0.42, py:0.88, r:60,  ax:0.088, ay:0.050, fx:1.02, fy:1.12, phx:0.9,  phy:2.7,  hue:205 },
+  ];
+
+  function drawBubble(x, y, r, hue) {
+    const g = ctx.createRadialGradient(x - r*0.32, y - r*0.34, r*0.04, x + r*0.1, y + r*0.1, r*1.02);
+    g.addColorStop(0.00, `hsla(${hue},55%,96%,0.96)`);
+    g.addColorStop(0.25, `hsla(${hue},45%,86%,0.80)`);
+    g.addColorStop(0.55, `hsla(${hue},40%,75%,0.52)`);
+    g.addColorStop(0.80, `hsla(${hue},38%,65%,0.26)`);
+    g.addColorStop(1.00, `hsla(${hue},35%,55%,0.04)`);
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+    ctx.fillStyle = g; ctx.fill();
+
+    const shine = ctx.createRadialGradient(x - r*0.36, y - r*0.36, 0, x - r*0.2, y - r*0.2, r*0.52);
+    shine.addColorStop(0.00, 'rgba(255,255,255,0.82)');
+    shine.addColorStop(0.45, 'rgba(255,255,255,0.20)');
+    shine.addColorStop(1.00, 'rgba(255,255,255,0.00)');
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+    ctx.fillStyle = shine; ctx.fill();
+
+    const g2 = ctx.createRadialGradient(x + r*0.3, y + r*0.32, 0, x + r*0.2, y + r*0.2, r*0.5);
+    g2.addColorStop(0, `hsla(${hue},60%,92%,0.26)`);
+    g2.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+    ctx.fillStyle = g2; ctx.fill();
+
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+    ctx.strokeStyle = `hsla(${hue},40%,90%,0.5)`;
+    ctx.lineWidth = 1.2; ctx.stroke();
+
+    ctx.beginPath(); ctx.arc(x + r*0.2, y + r*0.55, r*0.12, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(255,255,255,0.26)'; ctx.fill();
+  }
+
+  function drawGlow() {
+    const g1 = ctx.createRadialGradient(W()*0.42, -H()*0.08, 0, W()*0.42, -H()*0.08, W()*0.52);
+    g1.addColorStop(0, 'rgba(123,194,105,0.20)');
+    g1.addColorStop(1, 'rgba(123,194,105,0)');
+    ctx.fillStyle = g1; ctx.fillRect(0, 0, W(), H());
+
+    const g2 = ctx.createRadialGradient(W()*0.88, H()*0.88, 0, W()*0.88, H()*0.88, W()*0.52);
+    g2.addColorStop(0, 'rgba(140,190,240,0.16)');
+    g2.addColorStop(1, 'rgba(140,190,240,0)');
+    ctx.fillStyle = g2; ctx.fillRect(0, 0, W(), H());
+  }
+
+  let t = 0;
+  function frame() {
+    ctx.clearRect(0, 0, W(), H());
+    t += 0.007;
+    drawGlow();
+    bubbles.forEach(b => {
+      const x = b.px * W() + Math.sin(t * b.fx + b.phx) * b.ax * W();
+      const y = b.py * H() + Math.sin(t * b.fy + b.phy) * b.ay * H();
+      drawBubble(x, y, b.r, b.hue);
+    });
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+const toggle = document.querySelector('.nav-toggle');
+const menu = document.querySelector('.mobile-menu');
+if (toggle && menu) {
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    const [a,b,c] = toggle.querySelectorAll('span');
+    if (open) {
+      a.style.transform='rotate(45deg) translate(5px,5px)';
+      b.style.opacity='0';
+      c.style.transform='rotate(-45deg) translate(5px,-5px)';
+    } else { [a,b,c].forEach(s=>s.style=''); }
+  });
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    menu.classList.remove('open');
+    toggle.querySelectorAll('span').forEach(s=>s.style='');
+  }));
+}
+</script>
+</body>
+</html>
