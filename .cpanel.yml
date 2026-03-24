@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/fxoshqmy/public_html/
+    - /bin/cp -R index.html about.html services.html careers.html contact.html $DEPLOYPATH
+    - /bin/cp -R .htaccess robots.txt sitemap.xml favicon.ico $DEPLOYPATH
+    - /bin/cp -R assets/ $DEPLOYPATH
