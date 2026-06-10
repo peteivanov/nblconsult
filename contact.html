@@ -7,13 +7,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 <title>NBL Consulting — Contact</title>
-<meta name="description" content="Tell us what you're working on — paid media, SEO, content, or strategy. We reply within one business day, and we're direct about whether we can help.">
-<link rel="canonical" href="https://nblconsult.com/contact">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NBL Consulting">
-<meta property="og:title" content="NBL Consulting — Contact">
-<meta property="og:description" content="Tell us what you're working on. We reply within one business day.">
-<meta property="og:url" content="https://nblconsult.com/contact">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -751,24 +744,24 @@ a { color: inherit; text-decoration: none; }
 <body>
 <!-- NAV -->
 <nav class="nav">
-  <a href="/" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <img src="/assets/NBL-SVG-colour.svg" alt="NBL Consulting">
   </a>
   <div class="nav-right">
-    <a href="/services">Services</a>
-    <a href="/about">About</a>
-    <a href="/careers">Careers</a>
-    <a href="/contact" class="nav-cta active">Get in touch</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html" class="nav-cta active">Get in touch</a>
   </div>
   <button class="nav-toggle" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu">
-  <a href="/services">Services</a>
-  <a href="/about">About</a>
-  <a href="/careers">Careers</a>
-  <a href="/contact" class="nav-cta">Get in touch</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html" class="nav-cta">Get in touch</a>
 </div>
 <section class="page-hero">
   <div class="bubble-bg">
@@ -825,10 +818,9 @@ a { color: inherit; text-decoration: none; }
         <label for="topic">What are you looking for?</label>
         <select id="topic" name="topic">
           <option value="" disabled selected>Select a topic</option>
-          <option>Paid Media & PPC</option>
-          <option>SEO & Organic Growth</option>
-          <option>Content & Editorial</option>
-          <option>Strategy & Execution</option>
+          <option>Strategy & Planning</option>
+          <option>Execution Support</option>
+          <option>Growth & Go-to-Market</option>
           <option>General enquiry</option>
         </select>
       </div>
@@ -836,37 +828,8 @@ a { color: inherit; text-decoration: none; }
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="What are you working on? What do you need?"></textarea>
       </div>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;overflow:hidden;">
       <button type="submit" class="submit-btn">Send message</button>
-      <p class="form-status" role="status" aria-live="polite" style="display:none;"></p>
     </form>
-    <script>
-    (function () {
-      var form = document.querySelector('.contact-form');
-      var status = form.querySelector('.form-status');
-      var btn = form.querySelector('.submit-btn');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-        fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        }).then(function (r) {
-          if (!r.ok) throw new Error('send failed');
-          form.querySelectorAll('input, select, textarea, button').forEach(function (el) { el.disabled = true; });
-          status.textContent = 'Thanks — message received. We’ll come back to you within one business day.';
-          status.style.cssText = 'display:block;color:#5da64f;font-size:0.9rem;line-height:1.6;';
-        }).catch(function () {
-          btn.disabled = false;
-          btn.textContent = 'Send message';
-          status.textContent = 'Something went wrong sending the form. Please email contact@nblconsult.com instead.';
-          status.style.cssText = 'display:block;color:#c0564f;font-size:0.9rem;line-height:1.6;';
-        });
-      });
-    })();
-    </script>
 
   </div>
 </div>
@@ -884,16 +847,15 @@ a { color: inherit; text-decoration: none; }
       <div class="footer-links">
         <div class="footer-col">
           <div class="footer-col-title">Company</div>
-          <a href="/about">About</a>
-          <a href="/careers">Careers</a>
-          <a href="/contact">Contact</a>
+          <a href="about.html">About</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Services</div>
-          <a href="/services#paid-media">Paid Media &amp; Performance</a>
-          <a href="/services#seo">SEO &amp; Organic Growth</a>
-          <a href="/services#content">Content &amp; Editorial</a>
-          <a href="/services#strategy">Strategy &amp; Execution</a>
+          <a href="services.html#strategy">Strategy & Planning</a>
+          <a href="services.html#execution">Execution Support</a>
+          <a href="services.html#growth">Growth & Go-to-Market</a>
         </div>
       </div>
     </div>
@@ -987,6 +949,5 @@ if (toggle && menu) {
 })();
 
 </script>
-<script src="/assets/visit.js" defer></script>
 </body>
 </html>
