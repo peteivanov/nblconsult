@@ -2,6 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/fxoshqmy/public_html/website_1359b936/
-    - /bin/cp -R index.html about.html services.html careers.html contact.html $DEPLOYPATH
+    - /bin/cp -R index.html about.html services.html careers.html contact.html 404.html $DEPLOYPATH
     - /bin/cp -R .htaccess robots.txt sitemap.xml favicon.ico $DEPLOYPATH
     - /bin/cp -R assets/ $DEPLOYPATH

@@ -3,276 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<title>NBL Consulting — Strategy, Execution & Growth</title>
+<title>NBL Consulting — Marketing Agency & Strategy Partner in One Place</title>
+<meta name="description" content="Hong Kong agency delivering paid media, SEO, content, and strategy hands-on. Google, Meta, TikTok and programmatic campaigns, technical SEO audits, editorial production, and go-to-market consulting.">
+<link rel="canonical" href="https://nblconsult.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NBL Consulting">
+<meta property="og:title" content="NBL Consulting — Marketing Agency & Strategy Partner in One Place">
+<meta property="og:description" content="Paid media, SEO, content, and strategy — planned and delivered by the people who do the work.">
+<meta property="og:url" content="https://nblconsult.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "NBL Consulting",
+  "url": "https://nblconsult.com/",
+  "email": "contact@nblconsult.com",
+  "description": "Hong Kong agency delivering paid media, SEO, content, and growth strategy hands-on.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Hong Kong",
+    "addressCountry": "HK"
+  },
+  "areaServed": "Asia-Pacific",
+  "knowsAbout": ["Paid media", "Search engine optimisation", "Content marketing", "Go-to-market strategy"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; }
-:root {
-  --green: #7BC269;
-  --green-dark: #5da64f;
-  --charcoal: #2e2e2e;
-  --grey: #607080;
-  --light-bg: #dde6f0;
-  --border: rgba(0,0,0,0.08);
-  --nav-h: 68px;
-}
-body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fff;
-  color: var(--charcoal);
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-a { color: inherit; text-decoration: none; }
-
-/* NAV */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--nav-h); display: flex; align-items: center;
-  justify-content: space-between; padding: 0 52px;
-  background: rgba(221,230,240,0.88);
-  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,0.55); z-index: 100;
-}
-.nav-logo img { height: 34px; width: auto; display: block; }
-.nav-right { display: flex; align-items: center; gap: 36px; }
-.nav-right a { font-size: 0.875rem; font-weight: 500; color: #607080; transition: color 0.2s; }
-.nav-right a:hover, .nav-right a.active { color: var(--charcoal); }
-.nav-cta {
-  color: #fff !important; background: var(--green);
-  padding: 9px 20px; border-radius: 50px; font-weight: 600 !important;
-  transition: background 0.2s, transform 0.15s;
-}
-.nav-cta:hover { background: var(--green-dark) !important; transform: translateY(-1px); }
-.nav-toggle {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 4px;
-}
-.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--charcoal); border-radius: 1px; transition: 0.3s; }
-.mobile-menu {
-  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
-  background: rgba(221,230,240,0.97); backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 32px; flex-direction: column; gap: 16px; z-index: 99;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--charcoal); padding: 8px 0; border-bottom: 1px solid var(--border); }
-.mobile-menu .nav-cta { display: inline-block; text-align: center; margin-top: 8px; border-radius: 50px; }
-
-/* LAYOUT */
-.wrap { max-width: 1120px; margin: 0 auto; padding: 0 52px; }
-
-/* HERO */
-.hero {
-  position: relative; min-height: 100vh;
-  padding-top: var(--nav-h); display: flex;
-  align-items: center; text-align: center;
-  background: var(--light-bg); overflow: hidden;
-}
-#bubble-canvas {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  pointer-events: none; z-index: 0;
-}
-.hero-inner {
-  position: relative; z-index: 1; width: 100%;
-  padding: 80px 0; display: flex; flex-direction: column; align-items: center;
-}
-.hero-logo { margin-bottom: 36px; }
-.hero-logo img { height: 68px; width: auto; }
-.hero-eyebrow {
-  font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
-  text-transform: uppercase; color: #5a6a7a; margin-bottom: 24px;
-  display: flex; align-items: center; gap: 10px;
-}
-.hero-eyebrow::before, .hero-eyebrow::after {
-  content: ''; display: block; width: 22px; height: 1px; background: #8a9aaa; opacity: 0.5;
-}
-.hero h1 {
-  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
-  font-weight: 800; line-height: 1.06;
-  letter-spacing: -0.025em; color: var(--charcoal); margin-bottom: 28px;
-}
-.hero h1 em { font-style: normal; color: var(--green); }
-.hero p {
-  font-size: 1rem; color: var(--grey);
-  max-width: 440px; line-height: 1.8; margin-bottom: 40px;
-}
-.hero-links { display: flex; gap: 14px; align-items: center; justify-content: center; }
-.btn-green {
-  font-size: 0.875rem; font-weight: 600; color: #fff;
-  background: var(--green); padding: 13px 28px; border-radius: 50px;
-  transition: background 0.2s, transform 0.15s; display: inline-block;
-}
-.btn-green:hover { background: var(--green-dark); transform: translateY(-1px); }
-.btn-outline {
-  font-size: 0.875rem; font-weight: 600; color: var(--charcoal);
-  background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.12);
-  padding: 13px 28px; border-radius: 50px;
-  transition: background 0.2s, transform 0.15s; display: inline-block;
-  backdrop-filter: blur(8px);
-}
-.btn-outline:hover { background: rgba(255,255,255,0.92); transform: translateY(-1px); }
-
-/* CONTENT */
-.content-area { background: #fff; }
-.section { padding: 80px 0; border-bottom: 1px solid var(--border); }
-.section:last-of-type { border-bottom: none; }
-.section-label {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--green); margin-bottom: 16px;
-}
-.section h2 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700;
-  letter-spacing: -0.02em; line-height: 1.2; color: var(--charcoal); margin-bottom: 20px;
-}
-.service-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
-.service-item {
-  background: var(--light-bg); border: 1px solid rgba(0,0,0,0.06);
-  padding: 32px 28px; border-radius: 12px;
-  transition: transform 0.2s, box-shadow 0.2s; display: block;
-}
-.service-item:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-.service-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green); margin-bottom: 14px; }
-.service-item h3 { font-size: 1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 10px; }
-.service-item p { font-size: 0.875rem; color: var(--grey); line-height: 1.7; }
-.why-text { font-size: 0.95rem; color: var(--grey); line-height: 1.85; max-width: 560px; margin-bottom: 14px; }
-.why-link { color: var(--green); font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 8px; transition: opacity 0.2s; }
-.why-link:hover { opacity: 0.75; }
-
-/* CTA */
-.cta-section { position: relative; background: var(--green); padding: 96px 0; text-align: center; overflow: hidden; }
-.cta-inner { position: relative; z-index: 1; }
-.cta-section h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
-  color: #fff; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 14px;
-}
-.cta-section p { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 36px; max-width: 380px; margin-left: auto; margin-right: auto; line-height: 1.75; }
-.btn-white {
-  display: inline-block; background: #fff; color: var(--green);
-  font-size: 0.9rem; font-weight: 700; padding: 13px 32px; border-radius: 50px;
-  transition: opacity 0.2s, transform 0.15s;
-}
-.btn-white:hover { opacity: 0.92; transform: translateY(-1px); }
-
-/* FOOTER */
-.footer { background: var(--charcoal); padding: 52px 0 0; }
-.footer-inner {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  gap: 48px; padding-bottom: 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap;
-}
-.footer-logo img { height: 30px; width: auto; filter: brightness(0) invert(1); margin-bottom: 12px; }
-.footer-brand p { color: rgba(255,255,255,0.4); font-size: 0.82rem; line-height: 1.7; max-width: 220px; }
-.footer-brand a { color: rgba(255,255,255,0.5); font-size: 0.82rem; display: block; margin-top: 8px; transition: color 0.2s; }
-.footer-brand a:hover { color: #fff; }
-.footer-links { display: flex; gap: 52px; }
-.footer-col { display: flex; flex-direction: column; gap: 10px; }
-.footer-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 4px; }
-.footer-col a { font-size: 0.82rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
-.footer-col a:hover { color: #fff; }
-.footer-bottom { padding: 20px 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.2); }
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .nav { padding: 0 24px; }
-  .nav-right a:not(.nav-cta) { display: none; }
-  .nav-toggle { display: flex; }
-  .wrap { padding: 0 24px; }
-  .hero h1 { font-size: 2.2rem; }
-  .service-list { grid-template-columns: 1fr; }
-  .footer-inner { flex-direction: column; gap: 32px; }
-  .footer-links { flex-direction: column; gap: 24px; }
-}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
 <nav class="nav">
-  <a href="index.html" class="nav-logo">
+  <a href="/" class="nav-logo">
     <img src="/assets/NBL-SVG-colour.svg" alt="NBL Consulting">
   </a>
   <div class="nav-right">
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="careers.html">Careers</a>
-    <a href="contact.html" class="nav-cta">Get in touch</a>
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/careers">Careers</a>
+    <a href="/contact" class="nav-cta">Get in touch</a>
   </div>
   <button class="nav-toggle" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu">
-  <a href="services.html">Services</a>
-  <a href="about.html">About</a>
-  <a href="careers.html">Careers</a>
-  <a href="contact.html" class="nav-cta">Get in touch</a>
+  <a href="/services">Services</a>
+  <a href="/about">About</a>
+  <a href="/careers">Careers</a>
+  <a href="/contact" class="nav-cta">Get in touch</a>
 </div>
 
-<section class="hero">
-  <canvas id="bubble-canvas"></canvas>
-  <div class="wrap">
+<!-- HERO -->
+<div class="hero-shell">
+  <section class="block-dark hero">
+    <canvas id="bubble-canvas"></canvas>
     <div class="hero-inner">
-      <div class="hero-logo">
-        <img src="/assets/NBL-SVG-colour.svg" alt="NBL Consulting">
-      </div>
-      <div class="hero-eyebrow">Hong Kong</div>
-      <h1>Strategy, <em>execution,</em><br>and growth.</h1>
-      <p>We work with businesses at every stage — from planning through to delivery. We don't just advise. We stay close to the work until things move.</p>
+      <div class="hero-kicker">Hong Kong · Full-cycle</div>
+      <h1>Marketing agency &amp; strategy partner <em>in one place.</em></h1>
+      <p>No more juggling agencies, consultants, and freelancers. Paid media, SEO, content, and the strategy behind them — one team that stays until it works.</p>
       <div class="hero-links">
-        <a href="services.html" class="btn-green">What we do</a>
-        <a href="contact.html" class="btn-outline">Get in touch</a>
+        <a href="/services" class="btn btn-green">What we do <span class="arr">→</span></a>
+        <a href="/contact" class="btn btn-ghost-dark">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 01 SERVICES -->
+<section class="section">
+  <div class="wrap">
+    <div class="marker"><span class="n">01</span><span class="dash"></span><span>Services</span></div>
+    <h2 class="display">Four labs.<br>One team.</h2>
+    <p style="max-width:560px;color:var(--grey);font-size:0.95rem;line-height:1.8;">Every engagement is designed around implementation, not just advice. Pick a lab or combine them — the people who plan the work are the people who do it.</p>
+    <div class="lab-grid">
+      <a href="/services#paid-lab" class="lab-card dark">
+        <div class="lab-num">01</div>
+        <h3>Paid Lab</h3>
+        <p class="lab-sub">Full-funnel paid acquisition — planned, launched, and optimised by the same team.</p>
+        <ul>
+          <li>Google Ads — search &amp; shopping</li>
+          <li>Meta &amp; TikTok</li>
+          <li>Programmatic &amp; display</li>
+          <li>Web3 &amp; specialist ad networks</li>
+          <li>Measurement &amp; attribution</li>
+          <li>Landing pages &amp; conversion</li>
+        </ul>
+      </a>
+      <a href="/services#organic-lab" class="lab-card">
+        <div class="lab-num">02</div>
+        <h3>Organic Lab</h3>
+        <p class="lab-sub">Sustainable search visibility — built on technical depth, not tricks.</p>
+        <ul>
+          <li>Technical SEO audits</li>
+          <li>On-page &amp; content SEO</li>
+          <li>Community &amp; discussion presence</li>
+          <li>Local &amp; international SEO</li>
+          <li>Ongoing SEO management</li>
+        </ul>
+      </a>
+      <a href="/services#content-lab" class="lab-card">
+        <div class="lab-num">03</div>
+        <h3>Content Lab</h3>
+        <p class="lab-sub">Content people actually read — strategy, production, and distribution.</p>
+        <ul>
+          <li>Editorial strategy</li>
+          <li>Long-form content production</li>
+          <li>Website &amp; marketing copy</li>
+          <li>Bilingual content — English &amp; Chinese</li>
+        </ul>
+      </a>
+      <a href="/services#strategy-lab" class="lab-card dark">
+        <div class="lab-num">04</div>
+        <h3>Strategy Lab</h3>
+        <p class="lab-sub">Direction, structure, and hands-on delivery — through the hard parts, not just the kickoff.</p>
+        <ul>
+          <li>Fractional leadership</li>
+          <li>Go-to-market planning</li>
+          <li>Strategy audit &amp; review</li>
+          <li>Expansion &amp; market entry</li>
+          <li>Partnership development</li>
+        </ul>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WE WORK WITH -->
+<div style="padding:0 16px;">
+  <section class="block-dark" style="padding:96px 0;">
+    <div class="wrap">
+      <div class="marker"><span class="n">02</span><span class="dash"></span><span>We work with</span></div>
+      <h2 class="display">Built for teams<br>at every stage.</h2>
+      <div class="seg-grid">
+        <div class="seg">
+          <h3>Startups</h3>
+          <p>Finding your footing, first launches, first paid spend. We bring the senior marketing muscle you can't hire full-time yet — and the honesty to tell you what's not worth spending on.</p>
+        </div>
+        <div class="seg">
+          <h3>Established brands</h3>
+          <p>Navigating change, entering new markets, or fixing channels that have gone quiet. We audit what exists, then stay embedded until the fixes are live and the trend line moves.</p>
+        </div>
+        <div class="seg">
+          <h3>Agencies &amp; partners</h3>
+          <p>We slot in behind other teams — specialist paid, SEO, or content capacity delivered under your engagement, with senior people on every account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 03 WHY US -->
+<section class="section">
+  <div class="wrap">
+    <div class="marker"><span class="n">03</span><span class="dash"></span><span>Why us</span></div>
+    <h2 class="display">We stay involved<br>until things work.</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Execution over advice</h3>
+        <p>Most consultancy ends when the report is delivered. Ours doesn't — we're embedded in delivery, adjusting as things change, accountable to outcomes.</p>
+      </div>
+      <div class="why-card">
+        <h3>Senior people only</h3>
+        <p>No account-manager layers, no juniors learning on your budget. When you work with us, you work directly with the people doing the work.</p>
+      </div>
+      <div class="why-card">
+        <h3>We run our own media</h3>
+        <p>We build and operate our own consumer media properties — editorial, SEO, and content at scale. Client work runs on systems we trust with our own traffic.</p>
+      </div>
+      <div class="why-card">
+        <h3>Hong Kong base, regional reach</h3>
+        <p>Bilingual team working in English and Chinese, with clients and partners across the region and beyond.</p>
+      </div>
+      <div class="why-card">
+        <h3>Aligned incentives</h3>
+        <p>Our model is structured around your results. No padded retainers, no scope that exists to justify the invoice.</p>
+      </div>
+      <div class="why-card">
+        <h3>Honest about fit</h3>
+        <p>If we can't help, we'll tell you — and refer you somewhere that can. We'd rather lose an engagement than deliver a bad one.</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="content-area">
+<!-- 04 CONTACT -->
+<section class="section" id="contact" style="padding-top:0;">
   <div class="wrap">
-    <section class="section">
-      <div class="section-label">Services</div>
-      <h2>Three ways we help</h2>
-      <div class="service-list">
-        <a href="services.html#strategy" class="service-item">
-          <div class="service-num">01</div>
-          <h3>Strategy & Planning</h3>
-          <p>Clear direction before execution. Objectives, priorities, and plans designed to be implemented — not just presented.</p>
-        </a>
-        <a href="services.html#execution" class="service-item">
-          <div class="service-num">02</div>
-          <h3>Execution Support</h3>
-          <p>Hands-on delivery alongside your team. We stay involved through the hard parts — not just the kickoff.</p>
-        </a>
-        <a href="services.html#growth" class="service-item">
-          <div class="service-num">03</div>
-          <h3>Growth & Go-to-Market</h3>
-          <p>Launches, expansions, new markets. Practical plans covering positioning, channels, partnerships, and timing.</p>
-        </a>
+    <div class="contact-split">
+      <div class="contact-green">
+        <div class="marker"><span class="n">04</span><span class="dash"></span><span>Contact</span></div>
+        <div class="talk-circles" aria-hidden="true">
+          <span>L</span><span>E</span><span>T</span><span>'</span><span>S</span>
+          <span class="sp"></span>
+          <span>T</span><span>A</span><span>L</span><span>K</span>
+        </div>
+        <div class="cd">
+          <div class="cd-label">General inquiries</div>
+          <div class="cd-value"><a href="mailto:contact@nblconsult.com">contact@nblconsult.com</a></div>
+        </div>
+        <div class="cd">
+          <div class="cd-label">Location</div>
+          <div class="cd-value">Hong Kong</div>
+        </div>
+        <div class="cd">
+          <div class="cd-label">Response time</div>
+          <div class="cd-value">Within 1 business day</div>
+        </div>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="section-label">Why NBL</div>
-      <h2>We stay involved<br>until things work.</h2>
-      <p class="why-text">Most consultancy ends when the report is delivered. Ours doesn't. We're embedded in the work, adjusting as things change, and accountable to outcomes. Based in Hong Kong, operating across the region.</p>
-      <a href="about.html" class="why-link">About us →</a>
-    </section>
-  </div>
-</div>
-
-<section class="cta-section">
-  <div class="wrap cta-inner">
-    <h2>Ready to get started?</h2>
-    <p>Tell us where you are and what you're trying to solve.</p>
-    <a href="contact.html" class="btn-white">Get in touch</a>
+      <div class="contact-dark">
+        <form class="form" action="https://formspree.io/f/xjgardjk" method="POST">
+          <div class="fg">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="fg">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+          <div class="fg">
+            <label for="topic">What are you looking for?</label>
+            <select id="topic" name="topic">
+              <option value="" disabled selected>Select a topic</option>
+              <option>Paid Media &amp; PPC</option>
+              <option>SEO &amp; Organic Growth</option>
+              <option>Content &amp; Editorial</option>
+              <option>Strategy &amp; Execution</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="What are you working on? What do you need?"></textarea>
+          </div>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;overflow:hidden;">
+          <button type="submit" class="btn btn-green" style="align-self:flex-start;">Send message <span class="arr">→</span></button>
+          <p class="form-status" role="status" aria-live="polite" style="display:none;"></p>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- 05 FAQ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="marker"><span class="n">05</span><span class="dash"></span><span>FAQ</span></div>
+    <h2 class="display">Questions,<br>answered straight.</h2>
+    <div class="faq">
+      <details>
+        <summary>What does NBL Consulting actually do?</summary>
+        <div class="faq-body">Four things, separately or together: paid media (Google, Meta, TikTok, programmatic, and specialist networks), SEO (technical audits through ongoing management), content (editorial strategy and production in English and Chinese), and strategy (go-to-market, market entry, fractional leadership). The common thread is that we deliver the work, not just the recommendations.</div>
+      </details>
+      <details>
+        <summary>Which industries do you work with?</summary>
+        <div class="faq-body">We're industry-agnostic by design. Recent work spans consumer platforms, finance and trading, media, and regulated industries. The mechanics of growth — acquisition, search visibility, content that converts — transfer across sectors; what changes is the channel mix and the compliance constraints, and we've worked under strict ones.</div>
+      </details>
+      <details>
+        <summary>How do engagements work?</summary>
+        <div class="faq-body">Two common shapes. A scoped project: an audit, a launch, a campaign build — fixed deliverable, fixed timeline. Or an ongoing engagement: we operate a channel (or several) month to month, embedded with your team. Most clients start with a scoped project so both sides can judge the fit before committing.</div>
+      </details>
+      <details>
+        <summary>Do you only work with Hong Kong businesses?</summary>
+        <div class="faq-body">No. Hong Kong is home and we work in English and Chinese, but our clients and their markets span the region and beyond. Campaign work in particular is location-independent — we run programmes targeting markets we've never had an office in, because the data doesn't care where the desk is.</div>
+      </details>
+      <details>
+        <summary>Why choose a small team over a big agency?</summary>
+        <div class="faq-body">Because the people you meet are the people who do the work. Big agencies sell you the senior team and staff you with the junior one. We don't have a junior one. You also get honesty that's hard to find on retainer: if a channel isn't working, we say so and move the budget — our model is aligned with your results, not with billable scope.</div>
+      </details>
+      <details>
+        <summary>Can you produce content in Chinese?</summary>
+        <div class="faq-body">Yes — written, not machine-translated. We work in English, Cantonese, and Mandarin, which matters for Hong Kong and regional audiences where tone and register are easy to get wrong from the outside.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <section class="block-dark cta-inner">
+    <h2 class="display">Ready to <em>get started?</em></h2>
+    <p>Tell us where you are and what you're trying to solve.</p>
+    <a href="/contact" class="btn btn-green">Get in touch <span class="arr">→</span></a>
+  </section>
+</div>
+
+<!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer-inner">
@@ -280,21 +300,22 @@ a { color: inherit; text-decoration: none; }
         <div class="footer-logo">
           <img src="/assets/NBL-SVG-colour.svg" alt="NBL Consulting">
         </div>
-        <p>Strategy, execution, and growth.<br>Based in Hong Kong.</p>
+        <p>Marketing agency &amp; strategy partner in one place. Based in Hong Kong.</p>
         <a href="mailto:contact@nblconsult.com">contact@nblconsult.com</a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
           <div class="footer-col-title">Company</div>
-          <a href="about.html">About</a>
-          <a href="careers.html">Careers</a>
-          <a href="contact.html">Contact</a>
+          <a href="/about">About</a>
+          <a href="/careers">Careers</a>
+          <a href="/contact">Contact</a>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Services</div>
-          <a href="services.html#strategy">Strategy & Planning</a>
-          <a href="services.html#execution">Execution Support</a>
-          <a href="services.html#growth">Growth & Go-to-Market</a>
+          <a href="/services#paid-lab">Paid Lab</a>
+          <a href="/services#organic-lab">Organic Lab</a>
+          <a href="/services#content-lab">Content Lab</a>
+          <a href="/services#strategy-lab">Strategy Lab</a>
         </div>
       </div>
     </div>
@@ -302,108 +323,7 @@ a { color: inherit; text-decoration: none; }
   </div>
 </footer>
 
-<script>
-(function() {
-  const canvas = document.getElementById('bubble-canvas');
-  const ctx = canvas.getContext('2d');
-  const hero = canvas.parentElement;
-
-  function resize() {
-    canvas.width = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const W = () => canvas.width;
-  const H = () => canvas.height;
-
-  const bubbles = [
-    { px:0.10, py:0.18, r:115, ax:0.055, ay:0.048, fx:0.70, fy:0.82, phx:0.0,  phy:1.1,  hue:210 },
-    { px:0.86, py:0.13, r:90,  ax:0.048, ay:0.065, fx:0.92, fy:0.62, phx:2.0,  phy:0.5,  hue:200 },
-    { px:0.76, py:0.72, r:138, ax:0.040, ay:0.058, fx:0.62, fy:1.02, phx:1.2,  phy:2.3,  hue:205 },
-    { px:0.18, py:0.74, r:68,  ax:0.075, ay:0.042, fx:1.12, fy:0.72, phx:3.1,  phy:0.8,  hue:215 },
-    { px:0.50, py:0.05, r:52,  ax:0.068, ay:0.088, fx:0.82, fy:1.22, phx:1.6,  phy:1.9,  hue:200 },
-    { px:0.93, py:0.50, r:48,  ax:0.058, ay:0.050, fx:1.22, fy:0.92, phx:0.7,  phy:3.2,  hue:208 },
-    { px:0.03, py:0.48, r:82,  ax:0.050, ay:0.072, fx:0.72, fy:0.82, phx:2.4,  phy:0.4,  hue:212 },
-    { px:0.42, py:0.88, r:60,  ax:0.088, ay:0.050, fx:1.02, fy:1.12, phx:0.9,  phy:2.7,  hue:205 },
-  ];
-
-  function drawBubble(x, y, r, hue) {
-    const g = ctx.createRadialGradient(x - r*0.32, y - r*0.34, r*0.04, x + r*0.1, y + r*0.1, r*1.02);
-    g.addColorStop(0.00, `hsla(${hue},55%,96%,0.96)`);
-    g.addColorStop(0.25, `hsla(${hue},45%,86%,0.80)`);
-    g.addColorStop(0.55, `hsla(${hue},40%,75%,0.52)`);
-    g.addColorStop(0.80, `hsla(${hue},38%,65%,0.26)`);
-    g.addColorStop(1.00, `hsla(${hue},35%,55%,0.04)`);
-    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
-    ctx.fillStyle = g; ctx.fill();
-
-    const shine = ctx.createRadialGradient(x - r*0.36, y - r*0.36, 0, x - r*0.2, y - r*0.2, r*0.52);
-    shine.addColorStop(0.00, 'rgba(255,255,255,0.82)');
-    shine.addColorStop(0.45, 'rgba(255,255,255,0.20)');
-    shine.addColorStop(1.00, 'rgba(255,255,255,0.00)');
-    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
-    ctx.fillStyle = shine; ctx.fill();
-
-    const g2 = ctx.createRadialGradient(x + r*0.3, y + r*0.32, 0, x + r*0.2, y + r*0.2, r*0.5);
-    g2.addColorStop(0, `hsla(${hue},60%,92%,0.26)`);
-    g2.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
-    ctx.fillStyle = g2; ctx.fill();
-
-    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
-    ctx.strokeStyle = `hsla(${hue},40%,90%,0.5)`;
-    ctx.lineWidth = 1.2; ctx.stroke();
-
-    ctx.beginPath(); ctx.arc(x + r*0.2, y + r*0.55, r*0.12, 0, Math.PI*2);
-    ctx.fillStyle = 'rgba(255,255,255,0.26)'; ctx.fill();
-  }
-
-  function drawGlow() {
-    const g1 = ctx.createRadialGradient(W()*0.42, -H()*0.08, 0, W()*0.42, -H()*0.08, W()*0.52);
-    g1.addColorStop(0, 'rgba(123,194,105,0.20)');
-    g1.addColorStop(1, 'rgba(123,194,105,0)');
-    ctx.fillStyle = g1; ctx.fillRect(0, 0, W(), H());
-
-    const g2 = ctx.createRadialGradient(W()*0.88, H()*0.88, 0, W()*0.88, H()*0.88, W()*0.52);
-    g2.addColorStop(0, 'rgba(140,190,240,0.16)');
-    g2.addColorStop(1, 'rgba(140,190,240,0)');
-    ctx.fillStyle = g2; ctx.fillRect(0, 0, W(), H());
-  }
-
-  let t = 0;
-  function frame() {
-    ctx.clearRect(0, 0, W(), H());
-    t += 0.007;
-    drawGlow();
-    bubbles.forEach(b => {
-      const x = b.px * W() + Math.sin(t * b.fx + b.phx) * b.ax * W();
-      const y = b.py * H() + Math.sin(t * b.fy + b.phy) * b.ay * H();
-      drawBubble(x, y, b.r, b.hue);
-    });
-    requestAnimationFrame(frame);
-  }
-  frame();
-})();
-
-const toggle = document.querySelector('.nav-toggle');
-const menu = document.querySelector('.mobile-menu');
-if (toggle && menu) {
-  toggle.addEventListener('click', () => {
-    const open = menu.classList.toggle('open');
-    const [a,b,c] = toggle.querySelectorAll('span');
-    if (open) {
-      a.style.transform='rotate(45deg) translate(5px,5px)';
-      b.style.opacity='0';
-      c.style.transform='rotate(-45deg) translate(5px,-5px)';
-    } else { [a,b,c].forEach(s=>s.style=''); }
-  });
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    menu.classList.remove('open');
-    toggle.querySelectorAll('span').forEach(s=>s.style='');
-  }));
-}
-</script>
+<script src="/assets/site.js" defer></script>
+<script src="/assets/visit.js" defer></script>
 </body>
 </html>
