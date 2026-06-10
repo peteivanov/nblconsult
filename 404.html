@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<title>NBL Consulting — Page not found</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+:root {
+  --green: #7BC269;
+  --green-dark: #5da64f;
+  --charcoal: #2e2e2e;
+  --grey: #607080;
+  --light-bg: #dde6f0;
+  --border: rgba(0,0,0,0.08);
+  --nav-h: 68px;
+}
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--light-bg);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { color: inherit; text-decoration: none; }
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--nav-h); display: flex; align-items: center;
+  justify-content: space-between; padding: 0 52px;
+  background: rgba(221,230,240,0.88);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,0.55); z-index: 100;
+}
+.nav-logo img { height: 34px; width: auto; display: block; }
+.nav-right { display: flex; align-items: center; gap: 36px; }
+.nav-right a { font-size: 0.875rem; font-weight: 500; color: var(--grey); transition: color 0.2s; }
+.nav-right a:hover { color: var(--charcoal); }
+.nav-cta {
+  color: #fff !important; background: var(--green);
+  padding: 9px 20px; border-radius: 50px; font-weight: 600 !important;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--green-dark) !important; }
+.main {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: calc(var(--nav-h) + 40px) 24px 60px;
+}
+.code {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--grey); margin-bottom: 20px;
+}
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800;
+  letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 18px;
+}
+h1 em { font-style: normal; color: var(--green); }
+.main p { font-size: 0.95rem; color: var(--grey); max-width: 420px; margin: 0 auto 32px; line-height: 1.8; }
+.btn-green {
+  font-size: 0.875rem; font-weight: 600; color: #fff;
+  background: var(--green); padding: 13px 28px; border-radius: 50px;
+  transition: background 0.2s; display: inline-block;
+}
+.btn-green:hover { background: var(--green-dark); }
+@media (max-width: 900px) {
+  .nav { padding: 0 24px; }
+  .nav-right a:not(.nav-cta) { display: none; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/assets/NBL-SVG-colour.svg" alt="NBL Consulting">
+  </a>
+  <div class="nav-right">
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/careers">Careers</a>
+    <a href="/contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+<div class="main">
+  <div>
+    <div class="code">404 — Page not found</div>
+    <h1>This page <em>doesn't exist.</em></h1>
+    <p>The page you're looking for has moved or never existed. The homepage is the best place to start.</p>
+    <a href="/" class="btn-green">Back to homepage</a>
+  </div>
+</div>
+<script src="/assets/visit.js" defer></script>
+</body>
+</html>
